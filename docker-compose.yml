@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"  # Expose port 8000 from container to host
+      - "3011:3011"  # Expose port 8000 from container to host
     volumes:
       - .:/app  # Mount the local directory into the container (for dev)
-    command: ["pnpm", "run", "dev", "--port", "8000"]
+    command: ["pnpm", "run", "dev", "--port", "3011"]

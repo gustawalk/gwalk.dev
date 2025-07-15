@@ -16,7 +16,7 @@ RUN pnpm install
 COPY . .
 
 # Expose port 8000 for the Vite server
-EXPOSE 8000
+EXPOSE 3011
 
 # Run the Vite development server on port 8000
-CMD ["pnpm", "run", "dev", "--port", "8000"]
+CMD ["pnpm", "run", "dev", "--port", "3011"]
