@@ -23,6 +23,6 @@ export default defineConfig({
     port: 3011,
     host: '0.0.0.0',
     strictPort: true,
-    allowedHosts: ['gwalk.dev'],
+    allowedHosts: ["gwalk.dev", "*.gwalk.dev"],
   },
 })
