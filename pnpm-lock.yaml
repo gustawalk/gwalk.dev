@@ -11,6 +11,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.11
         version: 4.1.11(vite@7.0.4(@types/node@22.16.4)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0))
+      '@tanstack/vue-table':
+        specifier: ^8.21.3
+        version: 8.21.3(vue@3.5.17(typescript@5.8.3))
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.6)
@@ -48,6 +51,9 @@ importers:
         specifier: ^4.5.1
         version: 4.5.1(vue@3.5.17(typescript@5.8.3))
     devDependencies:
+      '@eslint/eslintrc':
+        specifier: ^3.3.1
+        version: 3.3.1
       '@tsconfig/node22':
         specifier: ^22.0.2
         version: 22.0.2
@@ -72,6 +78,9 @@ importers:
       eslint:
         specifier: ^9.29.0
         version: 9.31.0(jiti@2.4.2)
+      eslint-define-config:
+        specifier: ^2.1.0
+        version: 2.1.0
       eslint-plugin-vue:
         specifier: ~10.2.0
         version: 10.2.0(eslint@9.31.0(jiti@2.4.2))(vue-eslint-parser@10.2.0(eslint@9.31.0(jiti@2.4.2)))
@@ -741,8 +750,18 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
 
+  '@tanstack/table-core@8.21.3':
+    resolution: {integrity: sha512-ldZXEhOBb8Is7xLs01fR3YEc3DERiz5silj8tnGkFZytt1abEvl/GhUmCE0PMLaMPTa3Jk4HbKmRlHmu+gCftg==}
+    engines: {node: '>=12'}
+
   '@tanstack/virtual-core@3.13.12':
     resolution: {integrity: sha512-1YBOJfRHV4sXUmWsFSf5rQor4Ss82G8dQWLRbnk3GA4jeP8hQt1hxXh0tmflpC0dz3VgEv/1+qwPyLeWkQuPFA==}
+
+  '@tanstack/vue-table@8.21.3':
+    resolution: {integrity: sha512-rusRyd77c5tDPloPskctMyPLFEQUeBzxdQ+2Eow4F7gDPlPOB1UnnhzfpdvqZ8ZyX2rRNGmqNnQWm87OI2OQPw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      vue: '>=3.2'
 
   '@tanstack/vue-virtual@3.13.12':
     resolution: {integrity: sha512-vhF7kEU9EXWXh+HdAwKJ2m3xaOnTTmgcdXcF2pim8g4GvI7eRrk2YRuV5nUlZnd/NbCIX4/Ja2OZu5EjJL06Ww==}
@@ -1191,6 +1210,11 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
+
+  eslint-define-config@2.1.0:
+    resolution: {integrity: sha512-QUp6pM9pjKEVannNAbSJNeRuYwW3LshejfyBBpjeMGaJjaDUpVps4C6KVR8R7dWZnD3i0synmrE36znjTkJvdQ==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>=8.6.0'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   eslint-plugin-prettier@5.5.1:
     resolution: {integrity: sha512-dobTkHT6XaEVOo8IO90Q4DOSxnm3Y151QxPJlM/vKC0bVy+d6cVWQZLlFiuZPP0wS6vZwSKeJgKkcS+KfMBlRw==}
@@ -2792,7 +2816,14 @@ snapshots:
       tailwindcss: 4.1.11
       vite: 7.0.4(@types/node@22.16.4)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)
 
+  '@tanstack/table-core@8.21.3': {}
+
   '@tanstack/virtual-core@3.13.12': {}
+
+  '@tanstack/vue-table@8.21.3(vue@3.5.17(typescript@5.8.3))':
+    dependencies:
+      '@tanstack/table-core': 8.21.3
+      vue: 3.5.17(typescript@5.8.3)
 
   '@tanstack/vue-virtual@3.13.12(vue@3.5.17(typescript@5.8.3))':
     dependencies:
@@ -3327,6 +3358,8 @@ snapshots:
   eslint-config-prettier@10.1.5(eslint@9.31.0(jiti@2.4.2)):
     dependencies:
       eslint: 9.31.0(jiti@2.4.2)
+
+  eslint-define-config@2.1.0: {}
 
   eslint-plugin-prettier@5.5.1(eslint-config-prettier@10.1.5(eslint@9.31.0(jiti@2.4.2)))(eslint@9.31.0(jiti@2.4.2))(prettier@3.5.3):
     dependencies:

@@ -1,10 +1,9 @@
+version: '3.9'
+
 services:
-  vue-frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  app:
+    build: .
     ports:
-      - "3011:3011"  # Expose port 8000 from container to host
-    volumes:
-      - .:/app  # Mount the local directory into the container (for dev)
-    command: ["pnpm", "run", "dev", "--port", "3011"]
+      - "3011:3011"
+    restart: unless-stopped
+    command: serve -s dist -l 3000

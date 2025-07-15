@@ -1,10 +1,8 @@
-import { fileURLToPath, URL } from 'node:url'
-
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
+import { fileURLToPath, URL } from 'node:url';
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import path from "path";
-
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -20,9 +18,9 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3011,
+    port: 3000,
     host: true,
     strictPort: true,
     allowedHosts: ['gwalk.dev'],
   },
-})
+});

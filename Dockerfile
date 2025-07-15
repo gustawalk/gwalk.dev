@@ -1,22 +1,24 @@
-FROM node:24
-
-# Set the working directory inside the container
+# Stage 1: Build
+FROM node:24 AS build
 WORKDIR /app
 
-# Install pnpm globally
-RUN npm install -g pnpm
-
-# Copy the package.json and pnpm-lock.yaml files
 COPY package.json pnpm-lock.yaml ./
-
-# Install the project dependencies
+RUN npm install -g pnpm
 RUN pnpm install
 
-# Copy the rest of the application files
 COPY . .
+RUN pnpm build
 
-# Expose port 8000 for the Vite server
+# Stage 2: Serve
+FROM node:24
+WORKDIR /app
+
 EXPOSE 3011
 
-# Run the Vite development server on port 8000
-CMD ["pnpm", "run", "dev", "--port", "3011"]
+# Instala serve pra servir arquivos estáticos
+RUN npm install -g serve
+
+COPY --from=build /app/dist ./dist
+
+# Só roda o servidor estático da pasta dist
+CMD ["serve", "-s", "dist", "-l", "3000"]

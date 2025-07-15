@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "@tanstack/vue-table": "^8.21.3",
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -28,6 +29,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.15.32",
     "@vitejs/plugin-vue": "^6.0.0",
@@ -36,6 +38,7 @@
     "@vue/eslint-config-typescript": "^14.5.1",
     "@vue/tsconfig": "^0.7.0",
     "eslint": "^9.29.0",
+    "eslint-define-config": "^2.1.0",
     "eslint-plugin-vue": "~10.2.0",
     "jiti": "^2.4.2",
     "npm-run-all2": "^8.0.4",
