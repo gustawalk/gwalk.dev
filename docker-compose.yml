@@ -6,4 +6,4 @@ services:
     ports:
       - "3011:3011"
     restart: unless-stopped
-    command: serve -s dist -l 3000
+    command: serve -s dist -l 3011
