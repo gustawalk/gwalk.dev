@@ -5,7 +5,7 @@ This my personal portfolio, I am Software Engineering student passionate about c
 ---
 
 ## Portifolio URL
-- [gustawalk.dev](https://gustawalk.dev)
+[gwalk.dev](https://gwalk.dev)
 
 ---
 
