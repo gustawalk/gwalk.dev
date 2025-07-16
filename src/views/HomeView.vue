@@ -5,7 +5,7 @@
       <div class="container mx-auto px-4 py-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-2">
-            <vue-feather type="terminal" class="w-6 h-6" />
+            <Terminal class="w-6 h-6 text-green-400" />
             <span class="text-lg font-bold">gusta@dev</span>
           </div>
           <div class="hidden md:flex space-x-6">
@@ -27,7 +27,7 @@
             <div class="w-3 h-3 bg-red-500 rounded-full"></div>
             <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
             <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-            <span class="text-gray-400 text-sm ml-4">terminal</span>
+            <span class="text-gray-400 text-sm ml-4">kitty</span>
           </div>
           <div class="text-left">
             <p class="text-green-400">
@@ -40,7 +40,7 @@
 
         <h1 class="text-4xl md:text-6xl font-bold mb-6">
           <span class="text-white">Hello, I'm </span>
-          <span class="text-green-400">Gustavo</span>
+          <span class="text-green-400">Gustavo Walk</span>
         </h1>
 
         <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -54,7 +54,7 @@
             rel="noopener noreferrer"
           >
             <Button class="bg-green-600 text-white hover:bg-green-700">
-            <vue-feather type="github" class="w-4 h-4 mr-2" />
+              <Github class="w-4 h-4 mr-2" />
               GitHub
             </Button>
           </a>
@@ -68,7 +68,7 @@
               variant="outline"
               class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
             >
-            <vue-feather type="linkedin" class="w-4 h-4 mr-2" />
+              <Linkedin class="w-4 h-4 mr-2" />
               Contact Me
             </Button>
           </a>
@@ -104,7 +104,7 @@
             <Card class="bg-gray-800 border-green-400/30">
               <CardHeader>
                 <CardTitle class="text-green-400 flex items-center">
-                  <vue-feather type="monitor" class="w-5 h-5 mr-2" />
+                  <Monitor class="w-5 h-5 mr-2" />
                   Current Focus
                 </CardTitle>
               </CardHeader>
@@ -116,7 +116,7 @@
             <Card class="bg-gray-800 border-green-400/30">
               <CardHeader>
                 <CardTitle class="text-green-400 flex items-center">
-                  <vue-feather type="cpu" class="w-5 h-5 mr-2" />
+                  <Cpu class="w-5 h-5 mr-2" />
                   Favorite OS
                 </CardTitle>
               </CardHeader>
@@ -128,7 +128,7 @@
             <Card class="bg-gray-800 border-green-400/30">
               <CardHeader>
                 <CardTitle class="text-green-400 flex items-center">
-                  <vue-feather type="code" class="w-5 h-5 mr-2" />
+                  <Code class="w-5 h-5 mr-2" />
                   Philosophy
                 </CardTitle>
               </CardHeader>
@@ -154,7 +154,7 @@
             <Card class="bg-gray-800 border-green-400/30 h-full">
               <CardHeader>
                 <CardTitle class="text-green-400 flex items-center">
-                  <vue-feather type="globe" class="w-4 h-4" />
+                  <Globe class="w-5 h-5 mr-2" />
                   Languages
                 </CardTitle>
                 <CardDescription class="text-gray-400">$ cat /etc/locale.conf</CardDescription>
@@ -216,7 +216,7 @@
             <Card class="bg-gray-800 border-green-400/30">
               <CardHeader>
                 <CardTitle class="text-green-400 flex items-center">
-                  <vue-feather type="cpu" class="w-5 h-5 mr-2" />
+                  <Cpu class="w-5 h-5 mr-2" />
                   Soft Skills
                 </CardTitle>
                 <CardDescription class="text-gray-400">$ ps aux | grep skills</CardDescription>
@@ -250,7 +250,7 @@
             <Card class="bg-gray-800 border-green-400/30">
               <CardHeader>
                 <CardTitle class="text-green-400 flex items-center">
-                  <vue-feather type="monitor" class="w-5 h-5 mr-2" />
+                  <Monitor class="w-5 h-5 mr-2" />
                   Interests & Hobbies
                 </CardTitle>
                 <CardDescription class="text-gray-400">$ cat ~/.interests</CardDescription>
@@ -307,6 +307,7 @@
         </div>
       </div>
     </section>
+
     <!-- Technologies Section -->
     <section id="tech" class="py-20 px-4 bg-gray-800/50">
       <div class="container mx-auto max-w-6xl">
@@ -344,7 +345,7 @@
                         class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
                         @click="prevTech"
                       >
-                        <vue-feather type="chevron-left" class="w-4 h-4" />
+                        <ChevronLeft class="w-4 h-4" :stroke-width="4"/>
                       </Button>
                       <Button
                         variant="outline"
@@ -352,7 +353,7 @@
                         class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
                         @click="nextTech"
                       >
-                        <vue-feather type="chevron-right" class="w-4 h-4" />
+                        <ChevronRight class="w-4 h-4" :stroke-width="4"/>
                       </Button>
                     </div>
                   </div>
@@ -401,27 +402,27 @@
               </Badge>
             </div>
             <div class="flex space-x-4">
-              <Button
-                variant="outline"
-                size="sm"
-                class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
-              >
-                <a :href="project.github" target="_blank" rel="noopener noreferrer">
-                  <vue-feather type="github" class="w-4 h-4" />
-                  Code
-                </a>
-              </Button>
-              <Button
-                v-if="project.demo"
-                variant="outline"
-                size="sm"
-                class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
-              >
-                <a :href="project.demo" target="_blank" rel="noopener noreferrer">
-                  <vue-feather type="globe" class="w-4 h-4" />
-                  Live
-                </a>
-              </Button>
+              <a :href="project.github" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
+                >
+                <Github class="w-4 h-4"/>
+                Code
+                </Button>
+              </a>
+              <a :href="project.demo" target="_blank" rel="noopener noreferrer">
+                <Button
+                  v-if="project.demo"
+                  variant="outline"
+                  size="sm"
+                  class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
+                >
+                    <Globe class="w-4 h-4" />
+                    Live
+                </Button>
+              </a>
             </div>
           </CardContent>
         </Card>
@@ -438,7 +439,7 @@
 
         <div class="bg-gray-800 rounded-lg p-8 border border-green-400/30 mb-8">
           <p class="text-xl text-gray-300 mb-8">
-            Ready to collaborate on your next project? Let's build something amazing together!
+            You can contact me via the following channels!
           </p>
 
           <div class="flex flex-wrap justify-center gap-6">
@@ -449,7 +450,7 @@
                 variant="outline"
                 class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
               >
-                <vue-feather type="mail" class="w-4 h-4 mr-2" />
+                <Mail class="w-4 h-4" />
                 gustawalk@gmail.com
               </Button>
             </a>
@@ -462,7 +463,7 @@
                 variant="outline"
                 class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
               >
-                <vue-feather type="github" class="w-4 h-4 mr-2" />
+                <Github class="w-4 h-4" />
                 GitHub
               </Button>
             </a>
@@ -475,7 +476,7 @@
               variant="outline"
               class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
             >
-              <vue-feather type="linkedin" class="w-4 h-4 mr-2" />
+              <Linkedin class="w-4 h-4" />
               LinkedIn
             </Button>
             </a>
@@ -491,7 +492,7 @@
 </template>
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import VueFeather from 'vue-feather'
+import { Terminal, ChevronRight, ChevronLeft, Linkedin, Monitor, Cpu, Github, Code, Mail, Globe } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'

@@ -23,6 +23,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      lucide:
+        specifier: ^0.525.0
+        version: 0.525.0
       lucide-vue-next:
         specifier: ^0.525.0
         version: 0.525.0(vue@3.5.17(typescript@5.8.3))
@@ -78,9 +81,6 @@ importers:
       eslint:
         specifier: ^9.29.0
         version: 9.31.0(jiti@2.4.2)
-      eslint-define-config:
-        specifier: ^2.1.0
-        version: 2.1.0
       eslint-plugin-vue:
         specifier: ~10.2.0
         version: 10.2.0(eslint@9.31.0(jiti@2.4.2))(vue-eslint-parser@10.2.0(eslint@9.31.0(jiti@2.4.2)))
@@ -1211,11 +1211,6 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-define-config@2.1.0:
-    resolution: {integrity: sha512-QUp6pM9pjKEVannNAbSJNeRuYwW3LshejfyBBpjeMGaJjaDUpVps4C6KVR8R7dWZnD3i0synmrE36znjTkJvdQ==}
-    engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>=8.6.0'}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-
   eslint-plugin-prettier@5.5.1:
     resolution: {integrity: sha512-dobTkHT6XaEVOo8IO90Q4DOSxnm3Y151QxPJlM/vKC0bVy+d6cVWQZLlFiuZPP0wS6vZwSKeJgKkcS+KfMBlRw==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -1626,6 +1621,9 @@ packages:
     resolution: {integrity: sha512-Xf8+x8B2DrnGDV/rxylS+KBp2FIe6ljwDn2JsGTZZvXIfhmm/q+nv8RuGO1OyoMjOVkkz7CqtUqJfwtFPRbB2w==}
     peerDependencies:
       vue: '>=3.0.1'
+
+  lucide@0.525.0:
+    resolution: {integrity: sha512-sfehWlaE/7NVkcEQ4T9JD3eID8RNMIGJBBUq9wF3UFiJIrcMKRbU3g1KGfDk4svcW7yw8BtDLXaXo02scDtUYQ==}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -3359,8 +3357,6 @@ snapshots:
     dependencies:
       eslint: 9.31.0(jiti@2.4.2)
 
-  eslint-define-config@2.1.0: {}
-
   eslint-plugin-prettier@5.5.1(eslint-config-prettier@10.1.5(eslint@9.31.0(jiti@2.4.2)))(eslint@9.31.0(jiti@2.4.2))(prettier@3.5.3):
     dependencies:
       eslint: 9.31.0(jiti@2.4.2)
@@ -3740,6 +3736,8 @@ snapshots:
   lucide-vue-next@0.525.0(vue@3.5.17(typescript@5.8.3)):
     dependencies:
       vue: 3.5.17(typescript@5.8.3)
+
+  lucide@0.525.0: {}
 
   magic-string@0.30.17:
     dependencies:

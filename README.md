@@ -4,11 +4,16 @@ This my personal portfolio, I am Software Engineering student passionate about c
 
 ---
 
+## Portifolio URL
+- [gustawalk.dev](https://gustawalk.dev)
+
+---
+
 ## Tech Stack
 
 - **Frontend:** Vue 3 (Composition API), Tailwind CSS
 - **Components:** Custom Buttons, Cards, Badges
-- **Icons:** Vue-Feather
+- **Icons:** Lucide icons for UI elements
 - **Assets:** SVG icons for technologies like JavaScript, Vue.js, Node.js, Python, Rust, etc.
 
 ---
