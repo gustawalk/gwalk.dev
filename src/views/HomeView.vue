@@ -53,7 +53,10 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button class="bg-green-600 text-white hover:bg-green-700">
+            <Button
+              variant="outline"
+              class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
+            >
               <Github class="w-4 h-4 mr-2" />
               GitHub
             </Button>
@@ -69,7 +72,7 @@
               class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
             >
               <Linkedin class="w-4 h-4 mr-2" />
-              Contact Me
+              LinkedIn
             </Button>
           </a>
         </div>
@@ -320,42 +323,65 @@
             <CardContent class="p-0">
               <div class="grid md:grid-cols-2 min-h-[400px]">
                 <div class="p-8 flex items-center justify-center bg-gray-900/50">
-                  <div class="text-center">
-                    <img
-                      :src="technologies[currentTech].image"
-                      :alt="technologies[currentTech].name"
-                      class="w-48 h-48 mx-auto mb-4"
-                    />
-                    <Badge class="bg-green-600 text-white">{{ technologies[currentTech].category }}</Badge>
-                  </div>
+                  <Transition
+                    enter-active-class="transition duration-200 ease-out"
+                    enter-from-class="opacity-0 translate-y-2"
+                    enter-to-class="opacity-100 translate-y-0"
+                    leave-active-class="transition duration-100 ease-in"
+                    leave-from-class="opacity-100 translate-y-0"
+                    leave-to-class="opacity-0 translate-y-2"
+                    mode="out-in"
+                  >
+                    <div :key="technologies[currentTech].name" class="text-center">
+                      <img
+                        :src="technologies[currentTech].image"
+                        :alt="technologies[currentTech].name"
+                        class="w-48 h-48 mx-auto mb-4"
+                      />
+                      <Badge class="bg-green-600 text-white">
+                        {{ technologies[currentTech].category }}
+                      </Badge>
+                    </div>
+                  </Transition>
                 </div>
 
                 <div class="p-8 flex flex-col justify-center">
-                  <h3 class="text-2xl font-bold text-green-400 mb-4">{{ technologies[currentTech].name }}</h3>
-                  <p class="text-gray-300 leading-relaxed mb-6">{{ technologies[currentTech].description }}</p>
-
+                  <Transition
+                    enter-active-class="transition duration-200 ease-out"
+                    enter-from-class="opacity-0 translate-y-2"
+                    enter-to-class="opacity-100 translate-y-0"
+                    leave-active-class="transition duration-100 ease-in"
+                    leave-from-class="opacity-100 translate-y-0"
+                    leave-to-class="opacity-0 translate-y-2"
+                    mode="out-in"
+                  >
+                    <div :key="technologies[currentTech].name" class="text-center">
+                      <h3 class="text-2xl font-bold text-green-400 mb-4">{{ technologies[currentTech].name }}</h3>
+                      <p class="text-gray-300 leading-relaxed mb-6">{{ technologies[currentTech].description }}</p>
+                    </div>
+                  </Transition>
                   <div class="flex items-center justify-between">
-                    <div class="text-sm text-gray-400">
-                      {{ currentTech + 1 }} / {{ technologies.length }}
-                    </div>
-                    <div class="flex space-x-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
-                        @click="prevTech"
-                      >
-                        <ChevronLeft class="w-4 h-4" :stroke-width="4"/>
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
-                        @click="nextTech"
-                      >
-                        <ChevronRight class="w-4 h-4" :stroke-width="4"/>
-                      </Button>
-                    </div>
+                      <div class="absolute bottom-0 right-0 flex space-x-2 p-4">
+                        <div class="text-sm text-gray-400 mt-2 mr-4">
+                          {{ currentTech + 1 }} / {{ technologies.length }}
+                        </div>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
+                          @click="prevTech"
+                        >
+                          <ChevronLeft class="w-4 h-4" :stroke-width="4"/>
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
+                          @click="nextTech"
+                        >
+                          <ChevronRight class="w-4 h-4" :stroke-width="4"/>
+                        </Button>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -419,7 +445,7 @@
                   size="sm"
                   class="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 bg-transparent"
                 >
-                    <Globe class="w-4 h-4" />
+                    <Globe class="w-4 h-4"/>
                     Live
                 </Button>
               </a>
@@ -484,7 +510,7 @@
         </div>
 
         <p class="text-gray-400">
-          <span class="text-green-400">$</span> echo "Thanks for visiting my portfolio!"
+          <span class="text-green-400">$</span> echo "Thanks for your visit!"
         </p>
       </div>
     </section>
@@ -496,15 +522,15 @@ import { Terminal, ChevronRight, ChevronLeft, Linkedin, Monitor, Cpu, Github, Co
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import javascript from '../assets/javascript.svg'
-import gamemaker from '../assets/gamemaker.svg'
-import vuejs from '../assets/vuejs.svg'
-import nodejs from '../assets/nodejs.svg'
-import python from '../assets/python.svg'
-import linux from '../assets/linux.svg'
-import neovim from '../assets/neovim.svg'
-import laravel from '../assets/laravel.svg'
-import rust from '../assets/rust.svg'
+import javascript from '@/assets/javascript.svg'
+import gamemaker from '@/assets/gamemaker.svg'
+import vuejs from '@/assets/vuejs.svg'
+import nodejs from '@/assets/nodejs.svg'
+import python from '@/assets/python.svg'
+import linux from '@/assets/linux.svg'
+import neovim from '@/assets/neovim.svg'
+import laravel from '@/assets/laravel.svg'
+import rust from '@/assets/rust.svg'
 
 const technologies = [
   {
@@ -560,7 +586,7 @@ const technologies = [
     name: 'Rust',
     image: rust,
     description:
-      'Currently learning Rust for systems programming and performance-critical applications. Focused on ownership, borrowing, and concurrency models to build safe and efficient software.',
+      'Currently learning Rust for backend development with Tauri, focusing on performancer optimizations and memory safety. Building a desktop application for managing work orders in tech repair shops for my final college project.',
     category: 'Systems Programming',
   },
   {
@@ -585,7 +611,7 @@ const projects = [
   {
     title: 'AutoBorges',
     description:
-      'A macro manager for desktop environments, allowing users to automate repetitive tasks with custom scripts and macros. It also has some configuration options for the user to customize and change keybinds.',
+      'A macro manager built with PyQt5 GUI library for a desktop application, allowing users to automate repetitive tasks with custom scripts and macros. It also has some configuration options for the user to customize and change keybinds.',
     tech: ['Python'],
     github: 'https://github.com/gustawalk/autoborges',
     status: 'Completed',
