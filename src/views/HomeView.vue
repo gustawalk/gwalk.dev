@@ -632,6 +632,13 @@ const projects = [
     github: 'https://github.com',
     status: 'In Progress',
   },
+  {
+    title: 'CLI Password Manager',
+    description: "A CLI tool for managing passwords made with Rust, allowing users to store, retrieve and generate secure passwords. Created as a personal project to learn more about Rust and CLI.",
+    tech: ['Rust', 'Crates', 'CLI'],
+    github: 'https://github.com/gustawalk/walkpwd',
+    status: 'In Progress',
+  }
 ]
 
 const currentTech = ref(0)
