@@ -629,7 +629,7 @@ const projects = [
     description:
       'A desktop application for Work Order management in repair shops. It allows the owner to manage employees, templates and contracts. It also has a simple dashboard to visualize the data',
     tech: ['Rust', 'Vue', 'Tauri'],
-    github: 'https://github.com',
+    github: 'https://github.com/gustawalk/tcc-opet',
     status: 'In Progress',
   },
   {
